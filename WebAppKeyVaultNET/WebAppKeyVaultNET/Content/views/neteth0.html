@@ -1,0 +1,70 @@
+<!-- Status panel Network setup ETHERNET-->
+<div id="pnlNetworkEth" class="col-lg-12">
+    <div class="bs-callout">
+        <h4>Ethernet&nbsp;&nbsp;&nbsp;
+					<span id="covNetworkEth" ng-class="['label', {'label-default':adapter==null || !adapter.isrunning}, {'label-warning':adapter.isrunning && adapter.ip=='0.0.0.0'}, {'label-success':adapter.isrunning && adapter.ip!='0.0.0.0'}]">
+						<span class="glyphicon glyphicon-random"></span>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<span id="lblNetworkEth">LAN: {{((adapter==null || !adapter.isrunning)?'disconnected':adapter.ip)}} {{((adapter.isrunning && !adapter.dhcp)?' (STATIC)':'')}}</span>
+					</span>
+        </h4>
+        <p>
+        <p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="btn-group">
+                    <button ng-click="item.dhcp=true" type="button" id="btnNetworkEthDHCP" ng-class="['btn', {'btn-default': !item.dhcp}, {'btn-primary': item.dhcp}]">DHCP</button>
+                    <button ng-click="item.dhcp=false" type="button" id="btnNetworkEthStatic"  ng-class="['btn', {'btn-default': item.dhcp}, {'btn-primary': !item.dhcp}]">Static address</button>
+                </div>
+            </div>
+        </div>
+        </p>
+        <form id="frmNetEth" class="form-horizontal" ng-show="!item.dhcp">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">IP address</label>
+                <div class="col-sm-4">
+                    <input class="form-control" ng-model="item.address" id="txtNetEthIPAddress" name="txtNetEthIPAddress" data-bv-ip="true"
+                           data-bv-ip-ipv4="true" data-bv-ip-ipv6="false"  data-bv-ip-message="Address format is invalid"
+                           data-bv-notempty="true" data-bv-notempty-message="Address is empty" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Mask</label>
+                <div class="col-sm-4">
+                    <input class="form-control" ng-model="item.mask" name="txtNetEthMask" id="txtNetEthMask" data-bv-ip="true"
+                           data-bv-ip-ipv4="true" data-bv-ip-ipv6="false"  data-bv-ip-message="Address format is invalid"
+                           data-bv-notempty="true" data-bv-notempty-message="Address is empty" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Gateway</label>
+                <div class="col-sm-4">
+                    <input class="form-control" ng-model="item.gateway" id="txtNetEthGateway" name="txtNetEthGateway" data-bv-ip="true"
+                           data-bv-ip-ipv4="true" data-bv-ip-ipv6="false"  data-bv-ip-message="Address format is invalid"
+                           data-bv-notempty="true" data-bv-notempty-message="Address is empty" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">DNS Server</label>
+                <div class="col-sm-4">
+                    <input class="form-control" ng-model="item.dns" id="txtNetEthDNS" name="txtNetEthDNS" data-bv-ip="true"
+                           data-bv-ip-ipv4="true" data-bv-ip-ipv6="false"  data-bv-ip-message="Address format is invalid"
+                           data-bv-notempty="true" data-bv-notempty-message="Address is empty" type="text" />
+                </div>
+            </div>
+        </form>
+        <p>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="btn-group">
+                    <button ng-disabled="saveInfo.disableSave" type="button" id="btnNetEthSave" ng-click="saveSettings(item)" class="btn btn-default">Save changes</button>
+                </div>
+            </div>
+        </div>
+        <div id="divNetEthSaved" ng-show="saveInfo.showLabel">
+            <h3><span class="label label-success">Configuration saved!</span></h3>
+        </div>
+        </p>
+        </p>
+    </div>
+</div>
