@@ -17,7 +17,7 @@ namespace WebAppKeyVaultNET.Models
         public string Note { get; set; }
 
         [StringLength(500)]
-        [Column(TypeName = "nvarchar")]
+        [Column(TypeName = "varchar")]
         public string MySecretNote { get; set; }
 
     }

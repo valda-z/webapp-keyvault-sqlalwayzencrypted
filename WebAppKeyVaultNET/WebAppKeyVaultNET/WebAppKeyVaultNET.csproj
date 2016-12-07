@@ -256,7 +256,6 @@
     <Content Include="Content\components\waitdialog\waitdialog.js" />
     <Content Include="Content\controllers\about.js" />
     <Content Include="Content\controllers\home.js" />
-    <Content Include="Content\controllers\neteth0.js" />
     <Content Include="Content\css\site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\glyphicons-regular.svg" />
@@ -1088,8 +1087,6 @@
     <Content Include="Content\vendor\jquery\js\jquery.min.js" />
     <Content Include="Content\views\about.html" />
     <Content Include="Content\views\home.html" />
-    <Content Include="Content\views\neteth0.html" />
-    <Content Include="Content\views\neteth0_helper.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Views\_ViewStart.cshtml" />
